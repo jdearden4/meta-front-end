@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Little Lemon</title>
+    <meta name="description" content="Little Lemon's login screen">
+    <meta name="author" content="Little Lemon">
+
+    <meta property="og:title" content="Our menu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.littlelemon">
+    <meta property="og:description" content="Little Lemon is a family-owned Mediterranean restaurant.">
+    <meta property="og:image" content="logo.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png">
+    </header>
+    <nav>
+    </nav>
+    <main>
+        <video controls playback>
+                <source src="video.mp4" type="video/mp4">
+        </video>
+        <div>
+            <form>
+                <label for="rating">Rating</label>
+                <input type="range" id="rating" name="rating" min="1" max="5">
+                <datalist id="ratings">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </datalist>
+            </form>
+        </div>
+        <button type="submit">Submit Rating</button>
+    </main>
+    <footer id="Copyright">
+        <p>Copyright Little Lemon</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
