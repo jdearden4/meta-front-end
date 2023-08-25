@@ -51,6 +51,10 @@ nav li {
     font-weight: 400;
 }
 
+nav li a {
+    text-decoration: none;
+}
+
 nav li a:visited {
     color: #7c8726;
 }
