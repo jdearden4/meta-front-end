@@ -19,7 +19,9 @@
         <link rel="icon" href="img/logo-red.png" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-        <link rel="stylesheet" href="aboutstyle.css">
+        <link rel="stylesheet" href="ourworkstyle.css">
+        <script src="https://kit.fontawesome.com/861a7171eb.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
         <header>
@@ -43,10 +45,29 @@
         </header>
         <main>
             <section class="hero">
-                <h1 class="homepage-title">About Us</h1>
+                <h1 class="work-title">Our Work</h1>
             </section>
-            <section class="about">
-                <div class="info">
+            <section class="ourwork">
+                <div class="slider-container">
+                    <div class="slider">
+                        <img class="slider-img active" src="img/carousel1.jpeg">
+                        <img class="slider-img" src="img/carousel2.jpeg">
+                        <img class="slider-img" src="img/carousel3.jpeg">
+                        <img class="slider-img" src="img/carousel4.jpeg">
+                        <img class="slider-img" src="img/carousel5.jpeg">
+                        <img class="slider-img" src="img/carousel6.jpeg">
+                    </div>
+                    <div class="slider-controls">
+                            <button class="slider-button previous">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button class="slider-button next">
+                              <span>
+                                <i class="fa-solid fa-arrow-right"></i>                              </span>
+                            </button>
+                    </div>
+                </div>
+                <div class="slider-text">
                     <p>Lucky Shrub was started by a husband and wife team, Jason and Maria, who share a long-time love
                         for plants. Jason is the garden architect. He creates and oversees all designs while managing his
                         team of landscapers. Maria manages all the marketing for the company and oversees the nursery.
@@ -62,6 +83,6 @@
                 <p>Copyright Lucky Shrub</p>
             </div>
         </footer>
-        <script type="text/javascript" src="index.js" async></script>
+        <script type="text/javascript" src="workslider.js" async></script>
     </body>
 </html>

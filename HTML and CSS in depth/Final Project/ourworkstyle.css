@@ -1,0 +1,190 @@
+a {
+    color: black;
+}
+
+body {
+    background-color: white;
+    font-family:'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    padding-top: 8rem;
+    font-size: -15rem;
+    color: black;
+    font-size: 24px;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+}
+
+header { 
+    background-color: #265587;
+    height: 6.5rem;
+    width: 100%;
+    text-align: right;
+    overflow: hidden;
+    position: fixed;
+    opacity: 1;
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    float: left;
+    max-height: 75px;
+    width: auto;
+    padding: 1rem 0 1rem 2rem;
+}
+
+
+nav ul {
+    vertical-align: top;
+    text-align: center;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    padding: 1rem;
+    font-weight: 400;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+nav li a:visited {
+    color: #7c8726;
+}
+
+nav li a:hover {
+    color: white;
+}
+
+main {
+    padding-bottom: 3rem;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .logo {
+    max-height: 100px;
+    width: auto;
+    padding: 0 1rem 0 1rem;
+}
+
+footer p {
+    color: #7c8726;
+    font-weight: 800;
+}
+
+footer .logo:hover {
+    max-height: 130px;
+}
+
+.ourwork {
+    padding: 0 1.5rem;
+}
+
+
+
+/* CAROUSEL */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.slider-text {
+    display: flex;
+    justify-content: center;
+}
+
+.ourwork p {
+    width: 80%;
+    text-align: center;
+}
+
+.slider-button {
+    padding: 1rem .5rem;
+    background: none;
+    border: none;
+}
+
+i {
+    font-size: 3rem;
+}
+
+.slider img {
+    width: auto;
+    height: 20rem;
+}
+
+.slider-img.active {
+    display: inline;
+}
+
+.slider-img {
+    display: none;
+}
+
+button:hover {
+    color:pink;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width:620px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header {
+        height: 10rem;
+    }
+
+    main {
+        padding-top: 10rem;
+    }
+
+    footer {
+        padding: 2rem 0 2rem 0;
+    }
+
+    nav ul {
+        padding-left: 0;
+    }
+
+    .slider img {
+        padding: 1rem;
+    }
+}
