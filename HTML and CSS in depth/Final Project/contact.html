@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>Lucky Shrub</title>
+        <meta name="description" content="Lucky Shrub is a medium-sized garden design firm that specializes in garden design and creation, maintenance and landscaping.">
+        <meta name="author" content="Lucky Shrub">
+    
+        <!--Open Graph Protocol-->
+        <meta property="og:title" content="Lucky Shrub Garden Design">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.luckushrub">
+        <meta property="og:description" content="Lucky Shrub is a medium-sized garden design firm that specializes in garden design and creation, maintenance and landscaping.">
+        <meta property="og:image" content="img/logo-red.png">
+    
+        <link rel="icon" href="img/logo-red.png">
+        <link rel="icon" href="img/logo-red.png" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+        <link rel="stylesheet" href="style/contactstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Economica:wght@700&family=Jost:wght@300;400&family=Open+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img class="logo" src="img/logo-white.png">
+                <ul>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="about.html">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="ourwork.html">OUR WORK</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="form">
+                <h1>Get in touch!</h1>
+                <form class="contact-form">
+                    <div>
+                        <label for="firstName">First Name</label><br>
+                        <input type="text" id="firstName" name="firstName" required minlength="2">
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label><br>
+                        <input type="text" id="lastName" name="lastName" required minlength="2">
+                    </div>
+                    <div>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" required minlength="2">
+                    </div>
+                    <div>
+                        <label for="contactReason">Reason for Contact:</label><br>
+                        <input id="contactReason" name="contactReason" list="reasons">
+                        <datalist id="reasons">
+                            <option value="Get a Quote">Get a Quote</option>
+                            <option value="Check Inventory">Check Inventory</option>
+                            <option value="New Customer">New Customer</option>
+                            <option value="General">General</option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <button type="submit" class="submit-button">Submit</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-img">
+                <a href="index.html"><img class="logo" src="img/logo-red.png"></a>
+            </div>
+            <div>
+                <p>© Copyright Lucky Shrub</p>
+            </div>
+        </footer>
+    </body>
+</html>

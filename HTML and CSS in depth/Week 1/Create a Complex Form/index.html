@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Little Lemon</title>
+    <meta name="description" content="Little Lemon's login screen">
+    <meta name="author" content="Little Lemon">
+
+    <meta property="og:title" content="Our menu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.littlelemon">
+    <meta property="og:description" content="Little Lemon is a family-owned Mediterranean restaurant.">
+    <meta property="og:image" content="logo.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png">
+    </header>
+    <nav>
+    </nav>
+    <main>
+        <form>
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="booking_date">Password</label><br>
+                <input type="date" id="booking_date" name="date">
+            </div>
+        </div>
+        <div>
+            <label for="booking_people">People</label><br>
+            <input type="text" id="booking_people" name="people" min="1" max="8">
+        </div>
+            <div>
+                <label for="booking_agreement">I agree to the cancellation policy</label><br>
+                <input type="checkbox" id="booking_agreement" name="agreement">
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+    </main>
+    <footer id="Copyright">
+        <p>Copyright Little Lemon</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
