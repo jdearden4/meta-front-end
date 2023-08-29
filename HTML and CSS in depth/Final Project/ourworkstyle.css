@@ -2,18 +2,21 @@ a {
     color: black;
 }
 
+p {
+    line-height: 1.6rem;
+}
+
 body {
     background-color: white;
-    font-family:'Poppins', sans-serif;
+    font-family: 'Jost', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h1 {
     padding-top: 8rem;
-    font-size: -15rem;
     color: black;
-    font-size: 24px;
+    font-size: 3rem;
     margin: 0 0 1rem 0;
     text-align: center;
 }
@@ -145,7 +148,7 @@ i {
 
 .slider img {
     width: auto;
-    height: 20rem;
+    height: 22rem;
 }
 
 .slider-img.active {
@@ -157,7 +160,7 @@ i {
 }
 
 button:hover {
-    color:pink;
+    color:#b83434;
 }
 
 
@@ -186,5 +189,9 @@ button:hover {
 
     .slider img {
         padding: 1rem;
+    }
+
+    h1 {
+        padding-top: 2rem;
     }
 }
