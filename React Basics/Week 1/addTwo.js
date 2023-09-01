@@ -37,3 +37,5 @@ export { addTwo, addThree};
 
 //to IMPORT the above code into another JS file:
 import { addTwo } from "./addTwo"; 
+
+//introduction to functional components

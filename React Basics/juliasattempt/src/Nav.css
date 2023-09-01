@@ -1,0 +1,12 @@
+.nav-section {
+    background: white;
+    color: #5e9bc7;
+    height: 20%;
+  }
+  
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: center;
+}

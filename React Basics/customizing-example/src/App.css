@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.promo-section {
+  font-weight: bold;
+  color: purple;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

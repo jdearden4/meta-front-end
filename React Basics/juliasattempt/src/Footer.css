@@ -1,0 +1,15 @@
+.footer-section {
+    background: #738326;
+}
+
+.footer-section a:hover {
+    font-size: 1.25rem;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-transform: lowercase;
+
+}
