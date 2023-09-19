@@ -374,3 +374,82 @@ function App() {
         </div>
     )
 }
+
+export default App;
+
+//FeedbackForm.js file
+import "./App.css";
+import {useState} from "react";
+
+function FeedbackForm({onSubmit}) {
+    const [score, setScore] = useState("10");
+    const [comment, setComment] = useState("");
+
+    const isDisabled = Number(score) < 5 && comment.length <= 10;
+
+    const textAreaPlaceholder = isDisabled
+    ? "please provde a comment saying why the experience was bad. min length is 10"
+    : "optional feedback";
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit({score, comment});
+    }
+
+    return (
+        <div className="App">
+            <form onSubmit={handleSubmit}>
+                <fieldset>
+                    <h2>Feedback Form</h2>
+                    <div className="Field">
+                        <label>Score: {score}</label>
+                        <input
+                        value={score}
+                        onChange={(e) => {
+                            setScore(e.target.value)
+                        }}
+                        type="range"
+                        min="0"
+                        max="10"
+                    />
+                    </div>
+                    <h2>Feedback Form</h2>
+                    <div className="Field">
+                        <label>Comments: {score}</label>
+                        <input
+                        placeholder={textAreaPlaceholder}
+                        name="comment"
+                        value="comment"
+                        onChange={(e) => {
+                            setComment(e.target.value)
+                        }}
+                    />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    )
+}
+
+//App.text.js file
+
+import { fireEvent, render, screen} from "@testing-library/react";
+import FeedbackForm from "./FeedbackForm";
+
+describe("Feedback Form", () => {
+    test("Submission is disabled if score is lower than 5 and there is no feedback", () => {
+        //mock function
+        const handleSubmit = jest.fn();
+        render(<FeedbackForm onSubmit={handleSubmit} />);
+
+        //find and fill range input with a value
+        const rangeInput = screen.getByLabelText(/Score:/);
+        fireEvent.change(rangeInput, { target: { value: "4" } });
+
+        const submitButton = screen.getByRole("button");
+        fireEvent.click(submitButton);
+        
+        expect(handleSubmit).not.toHaveBeenCalled();
+        expect(submitButton).toHaveAttribute("disabled");
+    });
+});
