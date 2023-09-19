@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-// import {
-//   faGithub,
-//   faLinkedin,
-//   faMedium,
-//   faStackOverflow,
-// } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faMedium,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
 
 const socials = [
@@ -97,7 +97,7 @@ const Header = () => {
             {/* Add social media links based on the `socials` data */}
               {socials.map(({icon, url}) => (
                 <a key={url} href={url} icon={icon} target="_blank" rel="noopener noreferrer">
-                  {/* <FontAwesomeIcon key={url} icon={icon} size="2x"/> */}
+                  <FontAwesomeIcon key={url} icon={icon} size="2x"/>
                 </a>
               ))}
             
