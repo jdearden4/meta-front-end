@@ -2,7 +2,7 @@ import '../App.css';
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-function BookingForm({availableTimes}) {
+function BookingForm({availableTimes, handleDateChange}) {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guests, setGuests] = useState('0');
@@ -23,10 +23,17 @@ function BookingForm({availableTimes}) {
         clearForm()
     };
 
+    const handleDateChangeUpdate = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    handleDateChange(selectedDate);
+  };
+
     console.log("Available Times:", {availableTimes});
 
     return (
-    <form className="booking-form" onSubmit={handleSubmit}>
+    <div>
+    <form className="BookingForm booking-form" onSubmit={handleSubmit}>
         <h1>Book Now</h1>
         <fieldset>
             <div className="Field">
@@ -38,9 +45,7 @@ function BookingForm({availableTimes}) {
                     data-testid="date-table"
                     type="date"
                     value={date}
-                    onChange={(e) => {
-                        setDate(e.target.value)
-                    }}
+                    onChange={handleDateChangeUpdate}
                     placeholder="Choose date"
                     aria-label="Choose a date"
                     aria-required="true"
@@ -104,6 +109,7 @@ function BookingForm({availableTimes}) {
             </button>
         </fieldset>
     </form>
+    </div>
     )
 }
 
