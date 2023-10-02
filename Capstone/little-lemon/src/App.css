@@ -346,3 +346,9 @@ nav a {
 .footer img {
   height: 200px;
 }
+
+/* Booking */
+.booking {
+  height: 80vh;
+  padding: 0 100px;
+}

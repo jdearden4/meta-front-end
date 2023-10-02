@@ -1,14 +1,15 @@
 import Nav from "./Nav";
 import Footer from "./Footer";
+import BookingForm from "./BookingForm";
+import {useState} from "react";
 
-function BookingPage() {
+
+const BookingPage = (props) => {
     return (
         <>
-        <Nav/>
-        <div>
-            <h1>Booking page placholder</h1>
+        <div className="booking container">
+            <BookingForm/>
         </div>
-        <Footer/>
         </>
     )
 }
