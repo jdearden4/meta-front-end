@@ -1,11 +1,13 @@
 import '../App.css';
-import {useState} from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
-function BookingForm(availableTimes) {
+function BookingForm({availableTimes}) {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [guests, setGuests] = useState("");
+    const [guests, setGuests] = useState('0');
     const [occasion, setOccasion] = useState("");
+    const navigate = useNavigate()
 
     const clearForm = () => {
         setDate("");
@@ -16,9 +18,12 @@ function BookingForm(availableTimes) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Account created!");
-        clearForm();
+        console.log("Reservation created!");
+        navigate('/reserve/confirmation')
+        clearForm()
     };
+
+    console.log("Available Times:", {availableTimes});
 
     return (
     <form className="booking-form" onSubmit={handleSubmit}>
@@ -30,11 +35,15 @@ function BookingForm(availableTimes) {
                 </label>
                 <input
                     id="res-date"
+                    data-testid="date-table"
+                    type="date"
                     value={date}
                     onChange={(e) => {
-                        setDate(e.target.value);
+                        setDate(e.target.value)
                     }}
                     placeholder="Choose date"
+                    aria-label="Choose a date"
+                    aria-required="true"
                 />
             </div>
             <div className="Field">
@@ -43,13 +52,18 @@ function BookingForm(availableTimes) {
                 </label>
                 <select
                     id="res-time"
+                    data-testid="time-input"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
+                    aria-label="Select a time"
+                    aria-required="true"
                 >
-                    <option value="time">Choose a Time</option>
-                        {availableTimes.map((availableTimes) => (
-                            <option key={availableTimes}>{availableTimes}</option>
-                        ))}
+                <option value="">Choose Time</option>
+                    {availableTimes.map((availableTime) => (
+                        <option key={availableTime} value={availableTime}>
+                            {availableTime}
+                        </option>
+                    ))}
                 </select>
             </div>
             <div className="Field">
@@ -57,15 +71,18 @@ function BookingForm(availableTimes) {
                 Choose Guests <sup>*</sup>
                 </label>
                 <input
-                    type="Number"
+                    type="number"
                     id="guests"
-                    value={guests}
+                    data-testid="guests-input"
+                    value={guests.value}
                     onChange={(e) => {
                         setGuests(e.target.value);
                     }}
                     placeholder="1"
                     min="1"
                     max="10"
+                    aria-label="Number of guests"
+                    aria-required="true"
                 />
             </div>
             <div className="Occasion">
@@ -75,8 +92,9 @@ function BookingForm(availableTimes) {
                 <select
                     id="occasion"
                     value={occasion}
-                    onChange={(e) => setOccasion(e.target.value)}>
-                    <option value="occasion">Occasion</option>
+                    onChange={(e) => setOccasion(e.target.value)}
+                    aria-label="Select an Occasion"
+                    >
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversary">Anniversary</option>
                 </select>

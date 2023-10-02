@@ -1,9 +1,8 @@
 import './App.css';
-import Homepage from "./components/HomePage";
-import Reservations from "./components/BookingPage";
-import {Routes, Route} from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Main from "./components/Main";
+
 
 
 
@@ -14,11 +13,7 @@ function App() {
   return (
     <div className="App">
       <Nav/>
-      <Routes>
-        <Route path="/" element={<Homepage/>}/>
-        <Route path="/reserve"
-         element={<Reservations/>}/>
-      </Routes>
+      <Main/>
       <Footer/>
     </div>
 

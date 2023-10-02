@@ -4,7 +4,7 @@ import BookingForm from "./BookingForm";
 import {useState} from "react";
 
 
-const BookingPage = (props) => {
+function BookingPage (){
     return (
         <>
         <div className="booking container">
