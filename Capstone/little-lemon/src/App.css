@@ -115,8 +115,8 @@ nav ul {
   padding: 0;
 }
 
-nav li {
-  margin-left: 30px;
+.nav-item {
+  margin: 0 10px;
 }
 
 nav a {

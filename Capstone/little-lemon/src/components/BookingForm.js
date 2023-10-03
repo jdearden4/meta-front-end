@@ -2,10 +2,10 @@ import '../App.css';
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-function BookingForm({availableTimes, handleDateChange}) {
+function BookingForm({availableTimes, handleDateChange, submitForm}) {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [guests, setGuests] = useState('0');
+    const [guests, setGuests] = useState("0");
     const [occasion, setOccasion] = useState("");
     const navigate = useNavigate()
 
@@ -18,6 +18,16 @@ function BookingForm({availableTimes, handleDateChange}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const formData = {
+            date,
+            time, 
+            guests,
+            occasion
+        };
+
+        submitForm(formData);
+
         console.log("Reservation created!");
         navigate('/reserve/confirmation')
         clearForm()
@@ -49,6 +59,8 @@ function BookingForm({availableTimes, handleDateChange}) {
                     placeholder="Choose date"
                     aria-label="Choose a date"
                     aria-required="true"
+                    required
+
                 />
             </div>
             <div className="Field">
@@ -62,6 +74,8 @@ function BookingForm({availableTimes, handleDateChange}) {
                     onChange={(e) => setTime(e.target.value)}
                     aria-label="Select a time"
                     aria-required="true"
+                    required
+
                 >
                 <option value="">Choose Time</option>
                     {availableTimes.map((availableTime) => (
@@ -88,6 +102,8 @@ function BookingForm({availableTimes, handleDateChange}) {
                     max="10"
                     aria-label="Number of guests"
                     aria-required="true"
+                    required
+
                 />
             </div>
             <div className="Occasion">
@@ -99,12 +115,16 @@ function BookingForm({availableTimes, handleDateChange}) {
                     value={occasion}
                     onChange={(e) => setOccasion(e.target.value)}
                     aria-label="Select an Occasion"
+                    aria-required="true"
+                    required
+                    placeholder="Occasion"
+
                     >
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversary">Anniversary</option>
                 </select>
             </div>
-            <button type="submit" value="Make Your reservation">
+            <button type="submit" onSubmit={handleSubmit} value="Make Your reservation">
             Make Your Reservation
             </button>
         </fieldset>

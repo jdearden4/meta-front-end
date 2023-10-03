@@ -1,6 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import BookingForm from "./components/BookingForm"
+import Main from "./components/Main"
+
+
 
 describe("Booking Form", () => {
     //validate that initializeTimes function returns the expected value
@@ -10,25 +13,35 @@ describe("Booking Form", () => {
       expect(headingElement).toBeInTheDocument();
   })
 
-  it('should initialize availableTimes correctly', () => {
-    const { getByText } = render(<Main />);
-    // Assuming your initial times are displayed as options in the BookingForm component
-    expect(getByText('17:00')).toBeInTheDocument();
-    expect(getByText('18:00')).toBeInTheDocument();
-    expect(getByText('19:00')).toBeInTheDocument();
-  });
+  // Test initializeTimes function
+test('initializeTimes returns the expected value', () => {
+  // Call the initializeTimes function
+  const result = initializeTimes();
 
-  it('should update availableTimes correctly', () => {
-    const { getByTestId } = render(<Main />);
-    const dateInput = getByTestId('date-table');
+  // Define the expected result (based on your logic in the component)
+  const expectedTimes = [
+    "17:00",
+    "17:30",
+    "18:00",
+    // ... add other expected times based on your logic
+  ];
 
-    // Simulate changing the date input
-    fireEvent.change(dateInput, { target: { value: '2023-10-10' } });
+  // Use Jest's expect function to compare the result with the expected value
+  expect(result).toEqual(expectedTimes);
+});
 
-    // Assuming your updated times are displayed as options in the BookingForm component
-    expect(getByTestId('time-input')).toHaveTextContent('Updated Times');
-    // Adjust the selector and expectation based on your implementation
-  });
+// Test updateTimes function
+test('updateTimes returns the same value as provided in state', () => {
+  // Define a sample state and action
+  const initialState = ["17:00", "18:00", "19:00"];
+  const action = { type: 'update_times', availableTimes: ["16:00", "16:30"] };
+
+  // Call the updateTimes function with the state and action
+  const result = updateTimes(initialState, action);
+
+  // The result should be the same as the availableTimes in the action
+  expect(result).toEqual(action.availableTimes);
+});
 
 
 });
