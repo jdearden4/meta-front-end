@@ -6,11 +6,14 @@ import LemonDessert from "../img/lemon dessert.jpg"
 import DeliveryIcon from "../img/deliveryicon.svg"
 
 function Specials() {
+    const onlineMenu = function() {
+        alert('This is a placeholder for now. Please select something else!')
+    }
     return (
         <div className="specials row">
             <div className="card-container edge">
                 <h1>This Week's Specials!</h1>
-                <button className="yellow-button"><a href="#">Online Menu</a></button>
+                <button onClick={onlineMenu} className="yellow-button"><a href="#">Online Menu</a></button>
             </div>
             <div className="card-container">
             <div className="card">

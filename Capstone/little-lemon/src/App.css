@@ -80,6 +80,11 @@ img {
   border: none;
 }
 
+.yellow-button:hover {
+  background-color: #A98E0D;
+  color: white;
+}
+
 a {
   color: black;
 }
@@ -130,6 +135,10 @@ nav a {
   @media (min-width:600px)  {
     font-size: 18px;
   }
+}
+
+nav a:hover {
+  color: #495E57;
 }
 
 /* CTA */
@@ -348,14 +357,102 @@ nav a {
 }
 
 /* Booking */
-.booking {
-  height: 80vh;
+.booking-form {
+  height: 91vh;
   padding: 0 100px;
+  text-align: center;
+  @media (min-width:600px)  {
+    height: 80vh;
+  }
+}
+
+fieldset {
+  border: 1px solid #33333340;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-form h1 {
+  text-align: center;
+  font-size: 50px;
+  @media (min-width:600px)  {
+    font-size: 64px;
+  }
+}
+
+.Field {
+  text-align: left;
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #33333340;
+  border-radius: 16px;
+  @media (min-width:600px)  {
+    width: 80%;
+  }
+}
+
+label {
+  font-family: Karla;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 10px;
+}
+
+select, input {
+  font-family: Karla;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 5px;
+  @media (min-width:600px)  {
+    margin-top: 0;
+  }
+}
+
+#guests {
+  font-family: Karla;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.longer {
+  margin: 10px;
+  width: 211px;
+  @media (min-width:600px)  {
+    width: 301px;
+    margin: 10px;
+  }
+}
+
+.button-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media (min-width:600px)  {
+    flex-direction: row;
+  }
 }
 
 /* Booking Confirm */
 .booking-confirmation {
-  height: 80vh;
-  padding: 0 100px;
+  height: 120vh;
+  padding: 20px 100px 0 100px;
+  text-align: center;
+}
 
+.confirm-pic {
+  padding-top: 25px;
+  width: 350px;
+  height: auto;
+  border-radius: 16px;
 }

@@ -1,6 +1,6 @@
 import '../App.css';
 import React, {useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 
 function BookingForm({availableTimes, handleDateChange, submitForm}) {
     const [date, setDate] = useState("");
@@ -8,6 +8,8 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
     const [guests, setGuests] = useState("0");
     const [occasion, setOccasion] = useState("");
     const navigate = useNavigate()
+
+    const getIsFormValid = () => date && guests >= 1 && time && occasion !== "";
 
     const clearForm = () => {
         setDate("");
@@ -21,7 +23,7 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
 
         const formData = {
             date,
-            time, 
+            time,
             guests,
             occasion
         };
@@ -34,12 +36,13 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
     };
 
     const handleDateChangeUpdate = (e) => {
-    const selectedDate = e.target.value;
-    setDate(selectedDate);
-    handleDateChange(selectedDate);
-  };
+        const selectedDate = e.target.value;
+        setDate(selectedDate);
+        handleDateChange(selectedDate);
+      };
 
     console.log("Available Times:", {availableTimes});
+
 
     return (
     <div>
@@ -47,7 +50,7 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
         <h1>Book Now</h1>
         <fieldset>
             <div className="Field">
-                <label for="res-date">
+                <label htmlFor="res-date">
                 Choose Date <sup>*</sup>
                 </label>
                 <input
@@ -64,7 +67,7 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
                 />
             </div>
             <div className="Field">
-                <label for="res-time">
+                <label htmlFor="res-time">
                 Choose Time <sup>*</sup>
                 </label>
                 <select
@@ -86,14 +89,14 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
                 </select>
             </div>
             <div className="Field">
-                <label for="guests">
+                <label htmlFor="guests">
                 Choose Guests <sup>*</sup>
                 </label>
                 <input
                     type="number"
                     id="guests"
                     data-testid="guests-input"
-                    value={guests.value}
+                    value={guests}
                     onChange={(e) => {
                         setGuests(e.target.value);
                     }}
@@ -106,28 +109,33 @@ function BookingForm({availableTimes, handleDateChange, submitForm}) {
 
                 />
             </div>
-            <div className="Occasion">
-                <label for="occasion">
-                Occasion <sup>*</sup>
+            <div className="Field">
+                <label htmlFor="occasion">
+                Choose Occasion <sup>*</sup>
                 </label>
                 <select
                     id="occasion"
                     value={occasion}
                     onChange={(e) => setOccasion(e.target.value)}
+                    placeholder="Occasion"
                     aria-label="Select an Occasion"
                     aria-required="true"
                     required
-                    placeholder="Occasion"
-
                     >
+                    <option value="" disabled>
+                        Choose Occasion
+                    </option>
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversary">Anniversary</option>
                 </select>
             </div>
-            <button type="submit" onSubmit={handleSubmit} value="Make Your reservation">
-            Make Your Reservation
-            </button>
-        </fieldset>
+            </fieldset>
+            <div class="button-container">
+                <Link to="/"><button className="yellow-button longer">Back To Homepage</button></Link>
+                <button type="submit" className="yellow-button longer" aria-label="On Click" onSubmit={handleSubmit} value="Make Your reservation" disabled={!getIsFormValid()}>
+                    Make Your Reservation
+                </button>
+            </div>
     </form>
     </div>
     )
